@@ -1,0 +1,50 @@
+.videos {
+    position: relative; 
+    width: 650px;
+    height: 300px;
+    display: block;
+}
+
+.videos .vid1{
+    width: 1208px;
+    height: 680px;
+}
+.videos .buttonsleft {
+    position: absolute; 
+    bottom: 0; 
+    z-index: 1; 
+    width: 100%; 
+    text-align: center;
+    margin-left: -200px;
+    margin-bottom: -120px;
+    opacity: 65%;
+}
+
+.videos .buttonsright {
+    position: absolute;
+    bottom: 0; 
+    z-index: 1; 
+    width: 100%; 
+    text-align: center;
+    margin-left: 760px;
+    margin-bottom: -120px;
+    opacity: 65%;
+}
+
+.videos .buttonsleft .button1 {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    outline: none;
+    font-size: large;
+    visibility: hidden;
+}
+
+.videos .buttonsright .button2 {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    outline: none;
+    font-size: large;
+    visibility: hidden;
+}
