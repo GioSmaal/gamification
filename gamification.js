@@ -1,46 +1,66 @@
-var button1 = document.getElementById("button1")
-var button2 = document.getElementById("button2")
-var film = document.getElementById("film")
+window.onload = load;
+
+var button1, button2, film;
+var count = 2;
+var vidcount = 1;
+
+function load() {
+button1 = document.getElementById("button1");
+button2 = document.getElementById("button2");
+film = document.getElementById("film");
+
+button1.addEventListener("click", videos1)
+button2.addEventListener("click", videos2)
+film.autoplay = true;
+}
 
 function vidend() {
+    if (count == 5) {
+        button1.innerHTML = "Reset"
+        button2.innerHTML = "Reset"
+        button1.removeEventListener("click", videos1)
+        button2.removeEventListener("click", videos2)
+        button1.addEventListener("click", reset)
+        button2.addEventListener("click", reset)
+
+    }
     button1.style.visibility = "visible";
     button2.style.visibility = "visible";
 }
 
-function vid1() {
-    film.src = "vid2.mp4";
+
+function videos1() {
     button1.style.visibility = "hidden";
     button2.style.visibility = "hidden";
-    button1.setAttribute("onClick", "vid3()");
-    button2.setAttribute("onClick", "vid4()");
+
+    if (count % 2 == 0) { //good when count is 2
+        count ++;
+        vidcount ++;
+        film.src = "vid" + vidcount + ".mp4";
+        film.controls = false;
+    }
+    else {
+        alert("Wrong! Try again");
+        film.src = "vid" + vidcount + ".mp4";
+    }
 }
 
-function vid2() {
-    film.src = "vid1.mp4";
+function videos2() {
     button1.style.visibility = "hidden";
     button2.style.visibility = "hidden";
-    alert("Wrong! Try again");
+
+    if (count % 2 == 0) {
+        alert("Wrong! Try again");
+        film.src = "vid" + vidcount + ".mp4"
+    }
+    else { // good when count is 3
+        count ++;
+        vidcount ++;
+        film.src = "vid" + vidcount + ".mp4"
+    }
 }
 
-function vid3() {
-    film.src = "vid1.mp4";
-    button1.style.visibility = "hidden";
-    button2.style.visibility = "hidden";
-    button1.setAttribute("onClick", "vid1()");
-    button2.setAttribute("onClick", "vid2()");
-    alert("Wrong! Try again");
-}
-
-function vid4() {
-    film.src = "vid3.mp4";
-    button1.style.visibility = "hidden";
-    button2.style.visibility = "hidden";
-    button1.setAttribute("onClick", "vid5()");
-    button2.setAttribute("onClick", "vid5()");
-    button1.innerHTML = "Reset";
-    button2.innerHTML = "Reset";
-}
-
-function vid5() {
+function reset () {
+    count = 50;
     location.reload();
 }

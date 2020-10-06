@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="gamification.css">
+    <script src="gamification.js" type="text/javascript"></script>
 </head>
 
 <body>
     <div>
         <p>Dit is een interactive video die ik maak voor de specialisatie gamification. Met deze video kan een Rocket League speler zijn "decision making" verbeteren. 
         Dit staat voor het maken van keuzes in een wedstrijd. Normaalgesproken zou je hiervoor je eigen herhalingen terug moeten kijken om hierin te verbeteren, maar
-        dit kan natuurlijk best saai zijn, daarom is dit in een minigame vorm een leukere manier om te verbeteren. 
+        dit kan natuurlijk best saai zijn, daarom is dit in een minigame vorm een leukere manier om te verbeteren. <br> De video heeft een aantal verbeteringen doorgaan, voornamelijk intern
+        om de code compacter te maken en efficiënter om te vergroten, allemaal na feedback van Erik. Dit is <a href="http://i432855.hera.fhict.nl/gamification/" target="_blank">versie 1</a> . 
+        <br>
+        <br>
+        Het is dus de bedoeling dat je aan de hand van de situatie die je te zien krijgt de keuze kiest die het beste is voor dat moment in de wedstrijd. 
         <br>
         <br>
         Disclaimer: Dit is een prototype, er zijn slechts enkele keuzes en clips.
@@ -18,24 +23,19 @@
     
     <div class="videos">
 
-        <video class="vid1" id="film" autoplay muted controls onended="vidend()">
+        <video class="vid1" id="film" muted controls onended="vidend()">
         <source src="vid1.mp4" type="video/mp4" >
         </video>
         
         <div class="buttonsleft">
-            <button class="button1" id="button1" onclick="vid1()">Wait for their hit</button>
+            <button class="button1" id="button1">Wait for their hit</button>
             
         </div>
         <div class="buttonsright">
-            <button class="button2" id="button2" onclick="vid2()">Go for the ball</button>
+            <button class="button2" id="button2">Go for the ball</button>
         </div>
 
     </div>
 
-
-    
-
-
-    <script src="gamification.js" type="text/javascript"></script>
 </body>
 </html>
